@@ -12,6 +12,8 @@ services:
     profiles:
       - deploy
     command: /bin/bash -c "ros2 launch bringup_robot robot.launch.py"
+    volumes:
+      - ${MONO_DIR}/saved_maps:/maps
   
   robot_dev:
     build: *robot_build
